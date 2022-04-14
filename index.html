@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create - SmoothFlow Design</title>
+    <link rel="stylesheet" href="fonts.css">
+    <link rel="stylesheet" href="startup.css">
+    <link rel="stylesheet" href="glassy.css">
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/alyssaxuu/flowy/flowy.min.css"> 
+    <script src="https://cdn.jsdelivr.net/gh/alyssaxuu/flowy/flowy.min.js"></script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/28c18a059a.js" crossorigin="anonymous"></script>
+    <style class="dynamic-style">
+        /* Dynamic Javascript Styling goes here */
+    </style>
+    <style class="zoom-styler">
+        /* Dynamic Javascript Styling for zoom goes here */
+    </style>
+</head>
+<body>
+    <div class="overlay bg">
+    </div>
+
+    <div class="content-master ubuntu-normal">
+
+        <!-- Main Content -->
+
+        <!-- Topbar -->
+        <div class="topbar wf glassy privacy basic noradius rh noborder noselect">
+
+            <div class="flex acenter jspaced topbar-master-container blend">
+
+
+                <div class="left">
+                    <div class="flex acenter jcenter">
+                        <h1 class="title p1">
+                            SmoothFlow
+                        </h1>
+                        <div class="textcursor noborder basic wf hf current-file-name-input-container">
+                            <input type="text" class="wf hf current-file-name-input ubuntu-semi" placeholder="Make a catchy title...">
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="right">
+                    <div class="flex acenter jend wf hf">
+                        
+                        <!-- Home -->
+
+                        <div class="btn basic semi-strong options home" data-tooltip="Return home.">
+                            <div class="flex acenter jcenter wf hf">
+                                <i class="fa-solid fa-home icon-full"></i>
+                            </div>
+                        </div>
+                        
+                        <!-- Save -->
+
+                        <div class="btn basic semi-strong options save" data-tooltip="Save this project.">
+                            <div class="flex acenter jcenter wf hf">
+                                <i class="fa-solid fa-save icon-full"></i>
+                            </div>
+                        </div>
+
+                        <!-- Options -->
+
+                        <div class="btn basic semi-strong options preferences" data-tooltip="Configure your options.">
+                            <div class="flex acenter jcenter wf hf">
+                                <i class="fa-solid fa-gear icon-full"></i>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex acenter jstart wf glassy semi-strong basic noradius noborder main-content-container">
+
+            <!-- Toolbar -->
+
+            <div class="toolbar glassy strong basic noradius noborder">
+
+                <!-- Change category -->
+                <div class="categories-container flex acenter jcenter wf glassy basic noradius semi-strong">
+                </div>
+
+                <!-- Main Toolbar Content -->
+                <div class="main-content wf hf p1">
+
+                    <div class="content sticky flex acenter jstart column hf wf">
+                        <div class="category-content-container wf hf">
+                            <!-- Draggables are dynamically inserted here -->
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Main Content -->
+            <div class="basic noradius noborder wf hf">
+                <div class="canvas">
+
+                </div>
+            </div>
+
+        </div>
+        
+        <!-- Alert Box -->
+        <div class="wf alert-container flex acenter jcenter">
+            <div class="alert glassy basic pane">
+
+                <div class="flex acenter jcenter wf hf">
+                    <div class="icon-box">
+                        <i class="fa-solid fa-warning"></i>
+                    </div>
+                    <div class="flex acenter jcenter wf hf column">
+                        <div class="alert-title wf">
+                            Alert
+                        </div>
+                        <div class="alert-description wf">
+                            An alert has been raised.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Zoom Level Box -->
+        <div class="zoombox noselect c glassy basic privacy">
+            <div class="toptext">
+                Zoom
+            </div>
+            <div class="zoom-text">
+                100%
+            </div>
+        </div>
+
+        <!-- Other Tools -->
+
+        <div class="tooltip glassy pane acenter jcenter flex hidden">
+            This is tooltip context information.
+        </div>
+
+        <div class="context-menu glassy basic privacy noselect hidden">
+            <!-- Stuff are dynamically inserted here -->
+        </div>
+
+        <div class="modal glassy basic privacy noradius hidden-z-1000">
+            <div class="main-modal-container glassy basic privacy blend">
+                <!-- Stuff are dynamically inserted here -->
+            </div>
+        </div>
+
+    </div>
+
+    <script src="localStorage.js"></script>
+    <script src="global.js"></script>
+    <script src="unique.js"></script>
+    <script src="alertHandler.js"></script>
+    <script src="modal.js"></script>
+    <script src="canvas.js"></script>
+    <script src="tooltipHandler.js"></script>
+    <script src="draggableObjects.js"></script>
+    <script src="draggables.js"></script>
+    <script src="projects.js"></script>
+    <script src="contextMenu.js"></script>
+    <script src="preferences_modal.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

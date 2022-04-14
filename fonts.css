@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+.ubuntu-whisper {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight:100;
+}
+.ubuntu-light {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight:200;
+}
+.ubuntu-normal {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight:400;
+}
+.ubuntu-semi {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+}
+.ubuntu-weight {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 600;
+}
+.ubuntu-heavy {
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 800;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.underline {
+    text-decoration: underline;
+}
+.wave {
+    text-decoration: wavy;
+}
+.no-select {
+    user-select: none;
+}

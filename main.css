@@ -1,0 +1,798 @@
+:root {
+    --topbar-height: 3rem;
+    --font-size: 1rem;
+    --font-color: #555;
+    --light: #777;
+    --blend: rgba(255, 255, 255, 0.795);
+    --basically-white: rgba(255, 255, 255, 0.95);
+    --blend-dark: rgba(95, 95, 95, 0.795);
+    --alert-warning-color: rgba(243, 8, 0, 0.685);
+    --alert-success-color: rgba(44, 218, 0, 0.685);
+    --alert-info-color: rgba(27, 27, 27, 0.685);
+    --alert-info-text: rgba(20, 20, 20, 0.685);
+    --tooltip: rgba(17, 17, 17, 0.692);
+    --tooltip-text-color: rgba(255, 255, 255, 0.692);
+    --dragme-color: #0781ff;
+    --dragball-bigness: 0.35rem;
+    --yellow: rgba(177, 135, 0, 0.685);
+    --green: rgba(91, 163, 50, 0.685);
+    --purple: rgba(93, 50, 163, 0.685);
+    --blue: rgba(0, 145, 255, 0.568);
+    --red: rgba(189, 20, 20, 0.616);
+    --grey: rgba(51, 51, 51, 0.568);
+    --flowy-input-color: rgba(235, 235, 235, 0.226);
+    --flowy-input-border: rgba(155, 155, 155, 0.349);
+    --category-option-hover-color: rgba(0, 125, 228, 0.808);
+    --input-styled-start-color: rgba(255, 255, 255, 0.207);
+    --input-style-active: rgba(235, 235, 235, 0.415);
+    /* --category-option-background-color: rgba(255, 255, 255, 0.206); */
+    --category-option-hover-color-text: rgba(255, 255, 255, 0.918);
+
+    /* Context Menu */
+    --context-menu-background-color: rgba(255, 255, 255, 0.819);
+    --context-menu-shadow-color: rgba(0, 0, 0, 0.5);
+    --context-menu-hover-color: rgba(215, 215, 215, 0.808);
+    --context-menu-hover-color-text: rgba(73, 73, 73, 0.918);
+
+    /* Modal */
+    --modal: rgba(46, 46, 46, 0.586);
+    --close-modal-border-color: rgba(255, 255, 255, 0.367);
+    --close-modal-text-color: rgba(255, 255, 255, 0.639);
+
+    /* Switch Tab */
+
+    --switch-transition-duration: 300ms;
+}
+
+html {
+    height: 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    font-size: var(--font-size);
+    font-family:'Ubuntu', sans-serif;
+    font-weight:500;
+    color:var(--font-color);
+    height: 100%;
+}
+::-webkit-scrollbar {
+    width: 0;
+}
+
+.content-master {
+    height: 100%;
+}
+
+.overlay {
+    /* content: ''; */
+    z-index: -10;
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    top:0;
+    bottom:0;
+    background-size: cover;
+}
+
+.rtop {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+    border-top: 0 !important;
+}
+.rbottom {
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+    border-bottom: 0 !important;
+}
+.rleft {
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+    border-left: 0 !important;
+}
+.rright {
+    padding-right: 0 !important;
+    margin-right: 0 !important;
+    border-right: 0 !important;   
+}
+.rv {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+    border-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+    border-bottom: 0 !important;
+}
+.rh {
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+    border-left: 0 !important;
+    padding-right: 0 !important;
+    margin-right: 0 !important;
+    border-right: 0 !important;
+}
+
+.within {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+.container {
+    width: 100%;
+    height: 100%;
+}
+
+.bg {
+    background: url(/assets/bg.jpg) no-repeat center center;
+    background-size: cover;
+    filter:brightness(0.8)
+}
+
+.white {
+    color: rgba(255, 255, 255, 0.637);
+}
+
+.noselect {
+    user-select: none;
+}
+.noborder {
+    border: none !important;
+}
+
+.topbar {
+    height: var(--topbar-height);
+    width: 100%;
+    position: absolute;
+}
+
+.topbar-master-container *, .topbar-master-container {
+    z-index: 10;
+}
+
+.topbar .left, .topbar .right {
+    padding: 0 1rem;
+    height: var(--topbar-height);
+    z-index: 10;
+}
+
+.left {
+    min-width: 50%;
+}
+
+.topbar * {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.main-content-container {
+    /* height: calc(100% - var(--topbar-height)); */
+    height: 100%;
+}
+
+.toolbar {
+    height: calc(100% - var(--topbar-height));
+    min-width: 10%;
+    max-width: 20rem;
+    overflow-y: auto;
+    position: absolute;
+    bottom: 0;
+}
+
+.current-file-name-input {
+    background: transparent;
+    padding: 0.5rem;
+    border-radius: 0.67rem;
+    outline: none;
+    color: var(--blend-dark);
+    border: 0.5px solid transparent;
+    transition: ease-in-out 200ms all;
+}
+
+.current-file-name-input:hover, .current-file-name-input:focus {
+    border: 0.5px solid var(--flowy-input-border);
+    background: var(--flowy-input-color);
+}
+
+.current-file-name-input::placeholder {
+    opacity: 0.4;
+}
+
+
+.input-styled {
+    background: var(--input-styled-start-color);
+    padding: 0.5rem;
+    border-radius: 0.67rem;
+    outline: none;
+    color: var(--blend-dark);
+    border: 0.5px solid transparent;
+    transition: ease-in-out 200ms all;
+}
+
+.input-styled:hover, .input-styled:focus {
+    border: 0.5px solid var(--flowy-input-border);
+    background: var(--input-style-active);
+}
+
+.input-styled::placeholder {
+    opacity: 0.4;
+}
+
+
+
+/* Options */
+
+.options {
+    margin: 0 0.1rem;
+    text-align: center;
+}
+
+
+
+
+
+.light {
+    color: var(--light);
+}
+
+.blend {
+    color: var(--blend);
+}
+
+.blend-dark {
+    color: var(--blend-dark);
+}
+
+/* .current-file-name-input {
+    background: none;
+    border: none;
+    outline: none;
+    width: none;
+    caret-color: #444;
+    padding: 0.5rem 0.4rem;
+    
+}
+
+.current-file-name-input::placeholder {
+    color: var(--blend-dark);
+    opacity: 0.4;
+} */
+
+.icon-full {
+    width: 100%;
+    height: 100%;
+    font-size: 1rem;
+    color: var(--blend-dark);
+    opacity: 0.7
+}
+
+.options {
+    padding: 0.5rem;
+}
+
+.options:hover {
+    opacity: 0.9;
+}
+
+.title {
+    padding-left: 0;
+    padding-right: 2rem;
+}
+
+.zoombox {
+    margin: 0.7rem;
+    padding: 0.5rem;
+    width: 5rem;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.zoombox .toptext {
+    font-size: 0.5rem;
+    color: var(--blend-dark);
+}
+
+
+/* Alerts */
+
+.alert-container {
+    position: relative;
+    z-index: 100000000;
+}
+
+.alert {
+    margin: 0.7rem;
+    padding: 0.5rem;
+    width: 26rem;
+    position: absolute;
+    left: 100%;
+    bottom: -100%;
+    min-height: 8rem;
+    background: var(--basically-white);
+    color: #666;
+}
+
+.icon-box {
+    font-size: 2.4rem;
+    padding: 2rem 0.5rem;
+    border-radius: 0.6rem;
+}
+
+
+
+
+.alert-shown {
+    left: 0;
+}
+
+.alert-warning .icon-box {
+    background: var(--alert-warning-color);
+    color: var(--blend);
+}
+
+.alert-success .icon-box {
+    background: var(--alert-success-color);
+    color: var(--blend);
+}
+
+.alert-info .icon-box {
+    background: var(--alert-info-color);
+    color: var(--blend);
+}
+
+.alert-info .alert-description, .alert-info .alert-title {
+    color: var(--alert-info-text);
+}
+
+.alert-title, .alert-description {
+    padding: 0 1rem;
+    color: var(--blend-dark);
+}
+
+.alert-title {
+    font-size: 1.5rem;
+}
+.alert-description {
+    font-size: 1rem;
+}
+
+
+
+/* Tooltip */
+.tooltip {
+    position: absolute;
+    padding: 0.3rem;
+    border-radius: 0.5rem;
+    background: var(--tooltip);
+    color: var(--tooltip-text-color);
+    user-select: none;
+    border: solid rgba(124, 124, 124, 0.253) 0.1rem;
+    animation: tooltip-view 300ms linear forwards;
+}
+
+.hidden {
+    display: initial;
+    opacity: 0;
+}
+
+.hidden-z-1000 {
+    display: initial;
+    opacity: 0;
+    z-index: -1000 !important;
+}
+
+
+/* Drag Toolbar objects */
+
+.dragme {
+    width: 0.1rem;
+    transition: all 200ms ease-in-out 20ms;
+    cursor: ew-resize;
+}
+
+.dragme:hover {
+    background: var(--dragme-color);
+    width: 0.15rem;
+}
+
+.dragme:hover .ball {
+    transition: all 200ms ease-in-out 20ms;
+    border-radius: 1rem;
+    padding: var(--dragball-bigness);
+    background: var(--dragme-color);
+}
+
+.toolbar .content {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+
+
+/* Adjust Flowy.js */
+
+.arrowblock svg path {
+    stroke: #d4d4d4;
+    box-shadow: 5px 5px 5px 5px;
+    
+}
+
+.canvas {
+    position: absolute;
+    overflow-x: scroll;
+    overflow-y: scroll;
+    width: 1000%;
+    height: 1000%;
+    z-index: 0;
+}
+
+
+
+.create-flowy, .create-flowy * {
+    cursor: move;
+}
+
+.flowy-object-icon {
+    /* padding: 0.4rem; */
+    text-align: center !important;
+    font-size: 1.3rem;
+    width: 1.3rem;
+}
+
+.yellow-bleed {
+    text-shadow: var(--yellow) 0 0 2px;
+    color: var(--yellow);
+}
+.red-bleed {
+    text-shadow: var(--red) 0 0 2px;
+    color: var(--red);
+}
+.red {
+    /* text-shadow: var(--red) 0 0 2px; */
+    color: var(--red);
+}
+.purple-bleed {
+    text-shadow: var(--purple) 0 0 2px;
+    color: var(--purple);
+}
+.green-bleed {
+    text-shadow: var(--green) 0 0 2px;
+    color: var(--green);
+}
+.grey-bleed {
+    text-shadow: var(--grey) 0 0 2px;
+    color: var(--grey);
+}
+
+.top-title * {
+    /* height: 100%; */
+    text-align: right;
+}
+.noshow {
+    display: none;
+}
+
+.flowy-info {
+    background: transparent;
+    padding: 0.3rem;
+    border-radius: 0.4rem;
+    outline: none;
+    color: var(--blend-dark);
+    border: 0.5px solid transparent;
+    transition: ease-in-out 200ms all;
+}
+
+.flowy-info:hover, .flowy-info:focus {
+    border: 0.5px solid var(--flowy-input-border);
+    background: var(--flowy-input-color);
+}
+
+.flowy-info::placeholder {
+    opacity: 0.4;
+}
+
+/* Category objects Styling */
+
+.categories-container {
+    padding: 0.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 1111;
+    /* background: var(--category-option-background-color); */
+}
+
+
+.category-option {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    color: var(--blend);
+    cursor: pointer;
+    transition: ease-in-out 200ms all;
+    margin: 0 0.1rem;
+    z-index: 7;
+}
+
+.category-content-container {
+    position: sticky;
+}
+
+.category-option:hover {
+    background: var(--category-option-hover-color);
+    color: var(--category-option-hover-color-text);
+}
+
+.category-option:hover i {
+    color: var(--category-option-hover-color-text);
+}
+
+.category-active {
+    background: var(--category-option-hover-color);
+}
+
+.category-active i {
+    color: var(--category-option-hover-color-text);
+}
+
+/* Tutorial Objects */
+
+.HIGHLIGHT {
+    border: #0781ff solid 9px;
+}
+
+.DELETE {
+    border: #ff0f07 solid 9px;
+}
+
+
+/* Context Menu */
+
+.context-menu {
+    position: absolute;
+    z-index: 1111;
+    background: var(--context-menu-background-color);
+    border-radius: 0.5rem;
+    padding: 0.19rem;
+    box-shadow: 0 0 27px 4px var(--context-menu-shadow-color);
+    width: 10rem;
+}
+
+.context-menu, .ctx-item, .ctx-item i, .ctx-title {
+    transition: ease-in-out 100ms all;
+}
+
+.ctx-item {
+    border-radius: 0.4rem;
+    padding: 0.3rem;
+    width: 100%;
+}
+
+.ctx-item * {
+    height: 100%;
+}
+
+.ctx-item:hover {
+    background: var(--context-menu-hover-color);
+    color: var(--context-menu-hover-color-text);
+    cursor: pointer;
+}
+.ctx-icon {
+    font-size: 0.9rem;
+    padding-left: 0.3rem;
+}
+
+
+.ctx-title {
+    width: 100%;
+    padding-left: 0.6rem;
+}
+
+
+/* Context Color (Bleeding Colour Style) */
+
+.yellow-context-bleed {
+    text-shadow: var(--yellow) 0 0 2px;
+    color: var(--yellow);
+}
+
+.red-context-bleed {
+    text-shadow: var(--red) 0 0 1px;
+    color: var(--red);
+}
+.red-context-bleed:hover {
+    color: var(--basically-white);
+    background: var(--red);
+}
+
+.yellow-context-bleed {
+    text-shadow: var(--yellow) 0 0 1px;
+    color: var(--yellow);
+}
+.yellow-context-bleed:hover {
+    color: var(--basically-white);
+    background: var(--yellow);
+}
+
+.purple-context-bleed {
+    text-shadow: var(--purple) 0 0 1px;
+    color: var(--purple);
+}
+.purple-context-bleed:hover {
+    color: var(--basically-white);
+    background: var(--purple);
+}
+
+.green-context-bleed {
+    text-shadow: var(--green) 0 0 1px;
+    color: var(--green);
+}
+.green-context-bleed:hover {
+    color: var(--basically-white);
+    background: var(--green);
+}
+
+.grey-context-bleed {
+    text-shadow: var(--grey) 0 0 1px;
+    color: var(--grey);
+}
+.grey-context-bleed:hover {
+    color: var(--basically-white);
+    background: var(--grey);
+}
+.blue-context-bleed {
+    text-shadow: var(--blue) 0 0 1px;
+    color: var(--blue);
+}
+.blue-context-bleed:hover {
+    color: var(--basically-white);
+    background: var(--blue);
+}
+
+
+/* Modal */
+
+.modal {
+    width: 100vw;
+    height: 100vh;
+    z-index: 500;
+    background: var(--modal);
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 2rem;
+}
+
+.modal * {
+    transition: all 50ms ease-in-out;
+}
+
+.main-modal-container {
+    width: 100%;
+    height: 100%;
+
+}
+
+.close-modal {
+    color: var(--close-modal-text-color);
+    padding: 0.9rem 1.1rem;
+    font-size: 1.1rem;
+    border: solid var(--close-modal-border-color) 1px;
+    border-radius: 0.6rem;
+}
+
+.close-modal:hover {
+    background: var(--red);
+    color: var(--basically-white);
+    cursor: pointer;
+}
+
+.modal-header {
+    padding-bottom: 1.5rem;
+}
+
+.modal-title {
+    padding: 0 0.9rem;
+}
+
+.modal-text {
+    padding: 1.2rem 0;
+}
+
+.modal-input {
+    width: 100%;
+}
+
+.modal-content {
+    width: 100%;
+}
+
+.modal-item-footer-text {
+    padding: 0.1rem 0.1rem;
+    font-size: 0.7rem;
+    color: var(--blend-dark)
+}
+
+.modal-left, .modal-right {
+    height: 100%;
+    padding: 0 0.9rem;
+}
+.modal-bottom, .modal-top {
+    width: 100%;
+    padding: 0 0.9rem;
+}
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.bottom {
+    bottom: 0;
+}
+.top {
+    top: 0;
+}
+.left {
+    left: 0;
+}
+.right {
+    right: 0;
+}
+
+.modal-top-100 .modal-top {
+    height: 100%;
+}
+
+
+/* Toggle Switch */
+
+.switch {
+    border-radius: 1rem;
+    height: 1.5rem;
+    width: 3rem;
+    background: var(--red);
+    cursor: pointer;
+    position: relative;
+    transition: all var(--switch-transition-duration) ease-in-out;
+}
+.switch-tab {
+    border-radius: 1rem;
+    background: var(--blend);
+    height: 100%;
+    width: 1.5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+/* When Switch is ON */
+.switch-on {
+    background: var(--green);
+}
+
+.switch-on .switch-tab {
+    left: 1.5rem;
+}
+
+
+/* When Switch is OFF */
+.switch-off {
+    background: var(--red);
+}
+
+.switch-off .switch-tab {
+    left: 0;
+}
+

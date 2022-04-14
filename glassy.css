@@ -1,0 +1,65 @@
+:root {
+    --light: #eee;
+    --dark: #444;
+    --light-text: #444;
+    --dark-text: #eee;
+    --border: rgb(129, 129, 129, 0.158) solid 1.5px;
+
+    --border-off: 4px solid transparent;
+    --border-hover: rgba(129, 129, 129, 0.6) solid 4px;
+    --light-glass: rgba(239, 239, 239, 0.24);
+    --light-glass-strong: rgba(239, 239, 239, 0.548);
+    --light-glass-privacy: rgba(239, 239, 239, 0.656);
+    --light-glass-pane: rgba(239, 239, 239, 0.952);
+    --light-glass-semi-strong: rgba(239, 239, 239, 0.348);
+}
+
+.glassy {
+    background: var(--light-glass);
+    z-index: 1;
+    backdrop-filter:blur(20px);
+}
+
+.basic {
+    border: var(--border);
+    border-radius: 0.7rem;
+}
+
+.strong {
+    background: var(--light-glass-strong);
+}
+.privacy {
+    background: var(--light-glass-privacy);
+}
+.pane {
+    background: var(--light-glass-pane);
+}
+.semi-strong {
+    background: var(--light-glass-semi-strong);
+}
+.noradius {
+    border-radius: 0 !important;
+}
+.nocursor {
+    cursor: default !important;
+}
+.textcursor {
+    cursor: text !important;
+}
+
+
+.padded {
+    padding: 1rem;
+}
+.marged {
+    margin: 0.5rem;
+}
+
+.btn {
+    box-shadow: #ccc 0px 0px 19px;
+    transition: ease-in-out 200ms all;
+    cursor: pointer;
+}
+.btn:hover, .btn:focus {
+    box-shadow: #aaa 0px 0px 19px;
+}
